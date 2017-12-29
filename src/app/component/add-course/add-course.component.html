@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Add a new course:</h1>
+    <form (submit)="onAddSubmit()">
+      <div class="form-group">
+        <label for="number">Course Number</label>
+        <input type="text" class="form-control" id="number" required [(ngModel)]="number" name="number">
+      </div>
+      <div class="form-group">
+        <label for="name">Course Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name">
+      </div>
+      <div class="form-group">
+          <label for="credit">Course Credits</label>
+          <input type="text" class="form-control" id="credit" [(ngModel)]="credit" name="credit">
+      </div>
+      <div class="form-group">
+          <label for="prerequisite">Course Prerequisite</label>
+          <input type="text" class="form-control" id="prerequisite" [(ngModel)]="prerequisite" name="prerequisite">
+        </div>
+        <div class="form-group">
+            <label for="booklink">Book Store Web Link</label>
+            <input type="text" class="form-control" id="booklink" [(ngModel)]="booklink" name="booklink">
+          </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input id = "image" [(ngModel)]="image" type = "file" name = "image">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary" [routerLink]="['/courses/']">Cancel</a>
+     </form>
+</div>

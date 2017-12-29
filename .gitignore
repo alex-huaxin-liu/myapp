@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-
+/src/app/component/exec -l /bin
 # dependencies
 /node_modules
 

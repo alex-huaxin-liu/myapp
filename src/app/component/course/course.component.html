@@ -1,0 +1,34 @@
+<div class = "container" *ngIf="course">
+    <br><br>
+    <a [routerLink]="['/courses']">Go Back</a>
+    <br><br>
+    <div class="row">
+      <div class="col-md-4">
+        <img style="width:80%" class="thumbnail" src="{{imageUrl}}" id="courseimg">
+      </div>
+      <div class= "col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item"><b>Course Number: {{course?.number}}</b></li>
+          <li class="list-group-item"><b>Course Name: {{course?.name}}</b> ({{course?.credit}})credits</li>
+          <li class="list-group-item"><b>Course Description: </b>{{course?.description}}</li>
+          <li class="list-group-item"><b>Course Prerequisite: </b>
+              <p-dataList [value]="prerequisite">
+                  <ng-template let-pre pTemplate="item">
+                      <a href="/course/{{pre}}">{{pre}}</a>
+                  </ng-template>
+              </p-dataList>
+          </li>
+          <li class="list-group-item"><b>Course Note: </b>{{course?.note}}</li>
+          <li class="list-group-item"><b>Recommended book: </b>
+            <a href="{{course?.booklink}}">Book Store Link</a>
+            </li>
+        </ul>
+      </div>
+      <br><br>
+      <div class = "butt">
+        <a class="btn btn-primary" [routerLink]="['/editCourse/'+course.number]">Edit</a>
+        <a class="btn btn-danger" (click)="onDeleteClick()" style="color:white">Delete</a>
+        </div>
+    </div>
+</div>
+

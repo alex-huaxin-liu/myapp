@@ -1,0 +1,26 @@
+<div class = "container">
+  <hr>
+  <div class="ui-g border-dark">
+      <div class="ui-g-8"> 
+        Search: <input #gb type="text" placeholder="Search a Course"  width="1222">
+      </div>
+      <div class="ui-g-4"> 
+          <a class="btn btn-primary" [routerLink]="['/addCourse']" style="float:right">Add a Course</a>
+        </div>
+  </div>
+ <p-dataTable [value]="courses" [rows]="10" [paginator]="true" [globalFilter]="gb" [responsive]="true">
+    <p-header>List of Courses</p-header>
+    <p-footer>There are {{size}} courses</p-footer>
+    <p-column field="number" header="Number" sortable="true"></p-column>
+      <p-column field="name" header="Name" sortable="true"></p-column>
+      <p-column header="Detail">
+          <ng-template let-course="rowData" let-i="rowIndex" pTemplate="body">
+              <a class="btn btn-default" [routerLink]="['/course/'+course.number]">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </a>
+          </ng-template>
+      </p-column>
+  </p-dataTable>
+  
+</div>
+
